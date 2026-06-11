@@ -1,6 +1,8 @@
 # Unifi_Intercom_Auto_Picture_Change
 Automatic picture change for the Unifi Intercom, depending on the weather forecast. Made in Home Assistant / Node Red.
 
+This is my first post here on Github.
+
 I use this automation for changing the pictures on the Unifi Intercom, depending on the actual weather forecast. This automation is created with some help from AI.
 
 What I have
