@@ -1,3 +1,4 @@
+
 # Unifi_Intercom_Auto_Picture_Change
 Automatic picture change for the Unifi Intercom, depending on the weather forecast. Made in Home Assistant / Node Red.
 
@@ -5,7 +6,7 @@ This is my first post here on Github.
 
 I use this automation for changing the pictures on the Unifi Intercom, depending on the actual weather forecast. This automation is created with some help from AI.
 
-What I have
+**What I Currently use**
 Unifi:
 UDM Pro with: 
 - Unifi OS version 5.1.15
@@ -20,7 +21,7 @@ Home Assistant:
 - Node Red addon V4.1.9
 
 
-Step 1 Unifi
+**Step 1 Unifi**
 I did use Chrome for those steps, because Safari did give some difficulty with some steps.
 Login into the UDM with your account with a direct connection and not with the unifi.ui.com cloud access.
 1.	press in the top bar on the “Intercom Access” icon.
@@ -35,16 +36,17 @@ Login into the UDM with your account with a direct connection and not with the u
 9.	Make sure you have there your alternative pictures. I have here the following pictures, “Sunny, Rainy, Cloudy, Snowy, and Sleepy)
 10.	Make sure you have the last picture selected.
 
- 
-
+<img width="401" height="307" alt="Picture 1" src="https://github.com/user-attachments/assets/61bec96f-9f07-4bb9-8932-b5ea0ae7f093" />
 
 For the next part I did use Chrome.
+
 11.	Press on the function key F12,
 12.	In the screen/frame that opened, select on top “Network” 
 13.	Now change the picture of the intercom to the first picture.
 14.	In the frame on the right, there will appear at the bottom a new line. At me it looks like “<:> settings”
 15.	Press on this “<:> settings” and the Payload will appear. If not, then select the payload tap in the screen.
   
+<img width="428" height="300" alt="Picture 2" src="https://github.com/user-attachments/assets/87a6b3a7-afc2-4aa5-b4f6-bd32291e91fd" />
 
 16.	Copy the value: “activities_intercom_resource/Intercom………………….JPG” (or .PNG) to Notepad or somewhere else for later use.
 17.	Then go to the “Headers” tap
@@ -57,12 +59,12 @@ https://IPofUDMP/valueofpath so it will looks something like https://192.168.0.1
 After this we are done in the Unify Intercom settings. Only later the Intercom page can be handy for checking if the pictures are changing. Just remember that after each picture change the page need to be refreshed to see the results!
 
 
-Step 2 Home Assistant:
+**Step 2 Home Assistant:**
 1.	Go in HA to  Settings  Devices & services  Helpers
 2.	Creat a new helper, select in the Creat helper screen “Toggle”
 3.	Gif it the name: intercom_sleeping
 
-Step 3 Node Red
+**Step 3 Node Red**
 Import the intercom flow in Node Red as a new flow by pressing on the three stripes on the top right of the Node Red screen and selecting Import.
 
 1.	Weather.forecast_home nodes: Change in those two nodes the server and entity to the right weather.forecast_home entity. I use for the Entity ID for both nodes the standard HA weather forecast. This HA weather forecast has the type of weather “rain, sun, cloud” in the payload and not as a attribute.
